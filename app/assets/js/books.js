@@ -6,7 +6,7 @@ var bookshelf_books = [{
     "tags": [
         "Acute sense of personal failure"
     ],
-    "description": "When Elizabeth Gilbert's marriage falls apart, and then her relationship with her new lover, she sets out on a bold path--falling in love with food in Italy, discovering her inner strength at an ashram in India and, eventually, meeting a man in Bali. Even if you can't up and leave your life, reading about her misadventures lightens your load.",
+    "description": "Description goes here",
     "authorweb": "Elizabeth Gilbert",
     "twitter": "gilbertliz",
     "image": null,
