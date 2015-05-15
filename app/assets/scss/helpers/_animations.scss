@@ -1,0 +1,326 @@
+//   
+//     ___        _                 _   _                 
+//    / _ \      (_)               | | (_)                
+//   / /_\ \_ __  _ _ __ ___   __ _| |_ _  ___  _ __  ___ 
+//   |  _  | '_ \| | '_ ` _ \ / _` | __| |/ _ \| '_ \/ __|
+//   | | | | | | | | | | | | | (_| | |_| | (_) | | | \__ \
+//   \_| |_/_| |_|_|_| |_| |_|\__,_|\__|_|\___/|_| |_|___/
+//                                                        
+//     
+
+// Animated                                                   
+.animated {
+    &.fadeOut, 
+    &.fadeIn {
+        -webkit-animation-duration: 500ms;
+        animation-duration: 500ms;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+}
+
+%easing-custom {
+    -webkit-transition: all 1000ms cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   -moz-transition: all 1000ms cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   -o-transition: all 1000ms cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   transition: all 1000ms cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   /* custom */
+   
+   -webkit-transition-timing-function: cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   -moz-transition-timing-function: cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   -o-transition-timing-function: cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   transition-timing-function: cubic-bezier(0.995, 0.000, 0.000, 1.000);
+   /* custom */
+}
+
+
+%hover-animation{
+    -webkit-transition: background 150ms ease-in-out;
+    -moz-transition: background 150ms ease-in-out;
+    transition: background 150ms ease-in-out;
+}
+
+%size-animation{
+    -webkit-transition: height 250ms ease-in-out;
+    -moz-transition: height 250ms ease-in-out;
+    transition: height 250ms ease-in-out;
+}
+
+%movement-animation{
+    -webkit-transition: top 150ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+    -moz-transition: top 150ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+    transition: top 150ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+}
+
+// Loading Spinner
+.spinner {
+    margin: 100px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.loading{
+    background: tomato;
+    float:left;
+    width: 100%;
+    display: block;
+}
+
+
+// Animatinos for books
+$animation-length: 1.5s;
+$initial-delay: 0.12;
+$spinner-total: 12;
+$purple: white;
+
+.spinner > div {
+    width: 20px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 3px 3px 4px 4px;
+    display: inline-block;
+    -webkit-animation: bouncedelay $animation-length infinite;
+    -moz-animation: bouncedelay $animation-length infinite;
+    animation: bouncedelay $animation-length infinite;
+    -webkit-transition-timing-function: cubic-bezier(1,0,0,1);
+    -moz-transition-timing-function: cubic-bezier(1,0,0,1);
+    transition-timing-function: cubic-bezier(1,-0.14,0,1.37) ;
+    /* Prevent first frame from flickering when animation starts */
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+$s-min: 20;
+$s-max: 70;
+$l-min: 30;
+$l-max: 90;
+
+
+.spinner{
+    position: relative;
+
+    // Mixin for animations
+    @for $i from 1 through $spinner-total {
+        $random: (20 - random(20));
+        $random-lighter: darken($purple, $random);
+        
+         @if $i == 1 {
+            $delay: 0s; 
+        } @else {
+           $delay: unquote( ($initial-delay * $i) + 's'); 
+        }
+
+        @if $i == 1 {
+            $random-cover-color: lighten(#3b5742, 12%); // green
+        } @else if $i == 2{
+            $random-cover-color: lighten(#63251b, 12%); // brown
+        } @else if $i == 3{
+            $random-cover-color: lighten(#40524d, 12%); // blueish
+        } @else if $i == 4{
+            $random-cover-color: lighten(#242225, 12%);
+        } @else if $i == 5{
+            $random-cover-color: lighten(#915223, 12%); // lightbrown
+        } @else if $i == 6{
+            $random-cover-color: lighten(#951e1d, 12%); // bright red
+        } @else if $i == 7{
+            $random-cover-color: lighten(#b48d45, 12%); // gold
+        } @else if $i == 8{
+            $random-cover-color: lighten(#97453f, 12%); // light red
+        } @else {
+            $random-cover-color: lighten(#97453f, 12%); // light red
+        }
+
+        .bounce#{$i}{
+            background-color: $random-cover-color;
+            border-bottom: 2px solid darken($random-cover-color, 8%);
+            -webkit-animation-delay: $delay; 
+            -moz-animation-delay: $delay; 
+            animation-delay: $delay; 
+            height: unquote( (150 - random(40)) + 'px');
+            @extend %hover-animation;
+            &:after{
+                content: ' ';
+                display: block;
+                height: 10px;
+                width: 100%;
+                position: relative;
+                top: -2px;
+                border-left: 3px solid $random-cover-color;
+                border-right: 3px solid $random-cover-color;
+            }
+            &:before{
+                content: ' ';
+                display: block;
+                height: 10px;
+                width: 16px;
+                left: 50%;
+                margin-left: -8px;
+                background: white;
+                position: absolute;
+                top:0;
+                border-top: 1px solid rgba(0,0,0,0.2);
+                // border-bottom: 1px solid darken($random-cover-color, 15%);
+                border-left: 1px solid darken($random-cover-color, 10%);
+                border-right: 1px solid darken($random-cover-color, 10%);
+                border-radius: 0 0 3px 3px;
+            }
+            &:hover{
+                background-color: darken($random-cover-color, 15%);
+                @extend %hover-animation;
+                &:after{
+                    border-left: 3px solid darken($random-cover-color, 15%);
+                    border-right: 3px solid darken($random-cover-color, 15%);
+                }
+                &:before{
+                    border-left: 1px solid darken($random-cover-color, 20%);
+                    border-right: 1px solid darken($random-cover-color, 20%);
+                }
+            }
+            .texture{
+                background: green;
+                position: absolute;
+                top: 12px;
+                bottom: 0;
+                left: 4px;
+                right: 4px;
+                background: lighten($random-cover-color, 8%);
+                border-left: 2px solid darken($random-cover-color, 1%);
+                border-right: 2px solid darken($random-cover-color, 1%);
+            }
+        }
+    }
+}
+
+@-moz-keyframes bouncedelay {
+    0%{
+        -moz-transform: translate(0px,0px); // 0
+    }
+    4%{
+        -moz-transform: translate(0px,0px); // 0
+    }
+    12% {
+        -moz-transform: translate(0px,-20px); // -20px
+    }
+    24% {
+        -moz-transform: translate(0px,0px); // 0
+    }
+    28%{
+        -moz-transform: translate(0px,3px); // 3px
+    }
+    32%{
+        -moz-transform: translate(0px,1px); // 1px
+    }
+    36% {
+        -moz-transform: translate(0px,0px); // 0
+    }
+    48% {
+        -moz-transform: translate(0px,0px); // 0
+    }
+    100% {
+        -moz-transform: translate(0px,0px); // 0
+    }
+}
+
+
+@-webkit-keyframes bouncedelay {
+    0%{
+        -webkit-transform: translate(0px,0px); // 0
+    }
+    4%{
+        -webkit-transform: translate(0px,0px); // 0
+    }
+    12% {
+        -webkit-transform: translate(0px,-20px); // -20px
+    }
+    24% {
+        -webkit-transform: translate(0px,0px); // 0
+    }
+    28%{
+        -webkit-transform: translate(0px,3px); // 3px
+    }
+    32%{
+        -webkit-transform: translate(0px,1px); // 1px
+    }
+    36% {
+        -webkit-transform: translate(0px,0px); // 0
+    }
+    48% {
+        -webkit-transform: translate(0px,0px); // 0
+    }
+    100% {
+        -webkit-transform: translate(0px,0px); // 0
+    }
+}
+
+@keyframes bouncedelay {
+    0%{
+        transform: translate(0px,0px); // 0
+    }
+    4%{
+        transform: translate(0px,0px); // 0
+    }
+    12% {
+        transform: translate(0px,-20px); // -20px
+    }
+    24% {
+        transform: translate(0px,0px); // 0
+    }
+    28%{
+        transform: translate(0px,3px); // 3px
+    }
+    32%{
+        transform: translate(0px,1px); // 1px
+    }
+    36% {
+        transform: translate(0px,0px); // 0
+    }
+    48% {
+        transform: translate(0px,0px); // 0
+    }
+    100% {
+        transform: translate(0px,0px); // 0
+    }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-moz-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+
+
+

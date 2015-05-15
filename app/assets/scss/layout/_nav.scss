@@ -1,0 +1,59 @@
+.ba-nav{
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -11px;
+	left: 20px;
+	@media (max-width: $screen-xs-max){
+		width: 60%;
+		float: left;
+		position: relative;
+		top: 0;
+		margin: 8px 0;
+		left: 0;
+		a{
+			display: block;
+		}
+	}
+}
+
+.btn-icon{
+	background: $box-white;
+	padding: 10px;
+	border-radius: 50%;
+	width: 40px;
+	display: inline-block;
+	color: $ba-red;
+	margin-right: 5px;
+	&:hover{
+		background: $box-white-hover;
+	}
+	&:active{
+		background: darken($box-white-hover, 15%);
+		position: relative;
+		top: 2px;
+	}
+	@media (max-width: $screen-xs-max){
+		background: transparent;
+		color: $box-white-hover;
+		border: 1px solid $box-white-hover;
+	}
+}
+
+.btn-icon-wrapper{
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 26%;
+	@media (max-width: $screen-xs-max){
+		right: 0;
+		width: 35%;
+		float: right;
+		position: relative;
+		top: 0;
+		margin: 8px 0;
+		a{
+			display: inline-block;
+		}
+	}
+}

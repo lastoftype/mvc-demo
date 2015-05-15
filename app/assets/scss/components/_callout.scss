@@ -1,0 +1,79 @@
+
+.ba-callout {
+	width: 100%;
+	position: relative;
+	clear: both;
+	float: left;
+	padding: 0px;
+	background: $box-white;
+	margin-bottom: 20px;
+	@include make-sm-column(10);
+	@include make-sm-column-offset(1);
+	@include make-md-column(8);
+	@include make-md-column-offset(2);
+	@include make-md-column(6);
+	@include make-md-column-offset(3);
+	@media (max-width: $screen-xs-max){
+		padding: 20px;
+	}
+	@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min){
+		padding: 0px;
+	}
+	@media (min-width: $screen-md-min){
+		padding: 0px;
+	}
+	@extend %hover-animation;
+	@extend %movement-animation;
+	&:hover{
+		top: -5px;
+		@extend %hover-animation;
+		@extend %movement-animation;
+		cursor: pointer;
+		background: $box-white-hover;
+	}
+	.thumb {
+		@include make-sm-column(3);
+		@include make-md-column(3);
+		@include make-lg-column(3);
+		@media (max-width: $screen-xs-max){
+			display: none;
+		}
+		padding-left: 0px;
+		padding-right: 0px;
+		img{
+			width: 100%;
+		}
+	}
+	.inspired {
+		@include make-xs-column(12);
+		@include make-sm-column(9);
+		@include make-md-column(9);
+		@include make-lg-column(9);
+		
+		@media (max-width: $screen-xs-max){
+			padding: 5px 10px;
+		}
+		@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min){
+			margin-top: 10px;
+			padding: 20px;
+		}
+		@media (min-width: $screen-md-min){
+			margin-top: 2px;
+			padding: 20px;
+		}
+		@media (min-width: $screen-lg-min){
+			margin-top: 10px;
+		}
+		.subheader{
+			display: block;
+			font-family: 'Open Sans','Helvetica Neue',Helvetica;
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: 2px;
+			font-size: 13px;
+		}
+		img{
+			max-width: 100%;
+		}
+	}
+}

@@ -1,0 +1,72 @@
+//    ____        _   _                  
+//   |  _ \      | | | |                 
+//   | |_) |_   _| |_| |_ ___  _ __  ___ 
+//   |  _ <| | | | __| __/ _ \| '_ \/ __|
+//   | |_) | |_| | |_| || (_) | | | \__ \
+//   |____/ \__,_|\__|\__\___/|_| |_|___/
+//                                       
+
+.ba-btn-start{
+	background: $box-white;
+	padding: 12px 20px;
+	color: #222;
+	-webkit-transition: all 150ms ease-in-out;
+	-moz-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+	opacity: 0;
+	&:hover{
+		text-decoration: none;
+		color: #333;
+		background: $box-white-hover;
+		-webkit-transition: all 150ms ease-in-out;
+		-moz-transition: all 150ms ease-in-out;
+		transition: all 150ms ease-in-out;
+	}
+	[data-background="2"] &,
+	[data-background="3"] &{
+		opacity: 1;
+	}
+}
+
+// Facebook
+.ba-facebook{
+	@include button-variant(white, $brand-facebook, darken($brand-facebook, 5%));
+	&:hover{
+		color: white !important;
+	}
+}
+
+// Twitter
+.ba-twitter{
+	@include button-variant(white, $brand-twitter, darken($brand-twitter, 5%));
+	&:hover{
+		color: white !important;
+	}
+}
+
+// Twitter
+.ba-buy{
+	@include button-variant(white, $ba-purple, darken($ba-purple, 5%));
+}
+
+.ba-button-wrapper{
+	opacity: 0.8;
+	&:hover{
+		opacity: 1;
+	}
+}
+
+
+
+/*
+.btn-icon-wrapper{
+	display: inline-block;
+	float: right;
+	margin-left: 10px;
+	@media (max-width: $screen-xs-max){
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-top: 10px;
+	}
+}*/

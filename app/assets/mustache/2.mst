@@ -1,0 +1,10 @@
+<div class="ba-sentence animated fadeIn">
+	<h2>Tell us a bit more...</h2>
+</div>		
+
+
+<ul class="list-ailments list-unstyled" data-step="2">
+	{{#subailments}}
+	<li class="animated ailment-item fadeIn"><div class="ailment-outside"><div class="ailment-wrapper"><a href="#" data-view="2" data-ailment="{{.}}" class="item">{{.}}</a></div></div></li>
+	{{/subailments}}
+</ul>

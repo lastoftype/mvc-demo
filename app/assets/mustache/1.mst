@@ -1,0 +1,10 @@
+<div class="ba-sentence animated fadeIn">
+	<h2>How are you feeling today?</h2>
+</div>		
+
+<ul class="list-ailments" data-step="1">
+{{#.}}
+	<li class="animated fadeIn aliment-item"><div class="ailment-outside"><div class="ailment-wrapper"><a href="#" data-view="1" data-ailment="{{ailment}}" class="item">{{ailment}}</a></div></div></li>
+{{/.}}	
+</ul>
+

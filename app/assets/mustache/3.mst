@@ -1,0 +1,39 @@
+<div class="ba-sentence">
+	<h2 class="animated fadeIn">Here's your prescription for "{{#.}}{{#tag}}<strong>{{tag}}</strong>{{/tag}}{{/.}}"!</h2>
+</div>
+<ul class="list-books list-unstyled" data-step="3">
+	{{#.}}
+	{{#titleweb}}
+	<li class="animated fadeIn ailment-item">
+		<div class="book-wrapper">
+			<div class="book-cover" style="background-image:url({{#prh}}http://images.randomhouse.com/cover/{{isbn}}?width=300{{/prh}}{{^prh}}http://localhost:8888/maybe/www/wp-content/plugins/rif-apothecary/app/assets/images/books/{{image}}{{/prh}});">
+				<div class="book-texture"></div>
+			</div><!-- /.book-cover -->
+
+		</div>
+		<div class="ba-description-wrapper"><h3>{{titleweb}}</h3>
+					<p>{{description}}</p></div>
+
+			<div class="ba-button-wrapper">
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default btn-xs dropdown-toggle ba-buy" data-toggle="dropdown" aria-expanded="false">
+				    Buy <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu retailer-links tealium affiliatelinks" role="menu">
+				    <li><a href="http://links.penguinrandomhouse.com/type/affiliate/isbn/{{isbn}}/siteID/8001/retailerid/7/trackingcode/randohouseinc7970-20" class="affiliateLink">Amazon</a></li>
+				    <li><a href="http://links.penguinrandomhouse.com/type/affiliate/isbn/{{isbn}}/siteID/8001/retailerid/2/trackingcode/PRH43EC59AEA0" class="affiliateLink">Barnes &amp; Noble</a></li>
+				    {{#ibooks}}
+				    <li><a href="{{ibooks}}&at=11l3IH&ct=PRH43EC59AEA0--{{isbn}}" class="affiliateLink">iBooks</a></li>
+				    {{/ibooks}}
+				    <li><a href="http://links.penguinrandomhouse.com/type/affiliate/isbn/{{isbn}}/siteID/8001/retailerid/6/trackingcode/penguinrandom" class="affiliateLink">Indiebound</a></li>
+				  </ul>
+				</div>
+				<a href="#" class="btn btn-xs ba-share ba-facebook" data-title="{{titleweb}}" data-isbn="{{isbn}}" data-author="{{authorweb}}" data-description="{{description}}"><i class="fa fa-facebook"></i> Share</a>
+			    <a href="#" class="btn btn-xs ba-share ba-twitter" data-handle="{{twitter}}" data-title="{{titleweb}}"><i class="fa fa-twitter"></i> Tweet</a>
+				<!-- Single button -->
+			</div>
+	</li>
+	{{/titleweb}}
+	{{/.}}
+</ul>
+

@@ -1,0 +1,21 @@
+
+<div class="ba-sentence animated fadeIn">
+    <h2>Finding your perfect book...</h2>
+</div>      
+
+ <div class="list-loading">
+            <div class="loading-wrapper animated">
+                <div class="spinner">
+                    <div class="bounce1"><div class="texture"></div></div>
+                    <div class="bounce2"><div class="texture"></div></div>
+                    <div class="bounce3"><div class="texture"></div></div>
+                    <div class="bounce4"><div class="texture"></div></div>
+                    <div class="bounce5"><div class="texture"></div></div>
+                    <div class="bounce6"><div class="texture"></div></div>
+                    <div class="bounce7"><div class="texture"></div></div>
+                </div>
+                <!-- /.spinner -->
+            </div>
+            <!-- /.loading-wrapper -->
+        </div>
+        <!-- ./list-loading -->

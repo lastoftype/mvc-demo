@@ -1,0 +1,97 @@
+// 
+//  _   _            _       _     _           
+// | | | |          (_)     | |   | |          
+// | | | | __ _ _ __ _  __ _| |__ | | ___  ___ 
+// | | | |/ _` | '__| |/ _` | '_ \| |/ _ \/ __|
+// \ \_/ / (_| | |  | | (_| | |_) | |  __/\__ \
+//  \___/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/
+//                                          
+//      
+
+
+// Extends  
+%red-gradient {
+    background: linear-gradient( to bottom, lighten(tomato, 4%) 0%, saturate(tomato, 15%) 100%);
+}
+
+// Colors
+$box-white: 		rgba(255, 255, 255, 0.5);
+$box-white-hover: 	rgba(255, 255, 255, 0.7);
+$ba-blue: 			rgb(19,102,136);
+$ba-purple: 		rgb(65,63,87);
+$ba-purple-light: 	#c1bee1;
+$ba-red: 			rgb(168,71,65);
+$ba-blue-light: 	rgb(105,134,179);
+
+$brand-email: 		#0a88ff;
+$brand-facebook: 	#306199;
+$brand-tumblr: 		#32506d;
+$brand-linkedin: 	#007bb6;
+$brand-twitter: 	#26c4f1;
+$brand-googleplus: 	#e93f2e;
+$brand-reddit: 		#8bbbe3;
+$brand-youtube: 	#df1c31;
+$brand-pinterest: 	#b81621;
+$brand-github: 		#444;
+
+
+// Images
+$image-background: '../images/bg-paris.jpg';
+$image-logo: '../images/logo.png';
+
+$screen-xs:                  480px;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+
+// Media Queries
+// $screen-xs:       480px;
+// @screen-sm:       768px;
+// @screen-md:       992px;
+// @screen-lg:       1200px;
+// @screen-xs-max:   (@screen-sm-min - 1);
+// @screen-sm-max:   (@screen-md-min - 1);
+// @screen-md-max:   (@screen-lg-min - 1);
+
+$mq-xs: '(max-width: #{$screen-xs})';
+$mq-sm: '(min-width: #{$screen-sm-min})';
+$mq-md: '(min-width: #{$screen-md-min})';
+$mq-lg: '(min-width: #{$screen-lg-min})';
+
+$mq-xs-only:  '(max-width: #{$screen-xs-max})';
+$mq-sm-only:  '(max-width: #{$screen-sm-max})';
+$mq-md-only: '(max-width: #{$screen-md-max})';
+
+
+
+
+
+
+

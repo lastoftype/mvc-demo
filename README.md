@@ -1,2 +1,2 @@
 # mvc-demo
-Working on an MVC web app with Spine.js. Here's a preview
+This is a preview of the code of the MVC app I'm developing for one of Crown's marketing vertical sites. 

@@ -1,0 +1,131 @@
+//
+//   ______             _       ___              _   _                               
+//   | ___ \           | |     / _ \            | | | |                              
+//   | |_/ / ___   ___ | | __ / /_\ \_ __   ___ | |_| |__   ___  ___ __ _ _ __ _   _ 
+//   | ___ \/ _ \ / _ \| |/ / |  _  | '_ \ / _ \| __| '_ \ / _ \/ __/ _` | '__| | | |
+//   | |_/ / (_) | (_) |   <  | | | | |_) | (_) | |_| | | |  __/ (_| (_| | |  | |_| |
+//   \____/ \___/ \___/|_|\_\ \_| |_/ .__/ \___/ \__|_| |_|\___|\___\__,_|_|   \__, |
+//                                  | |                                         __/ |
+//                                  |_|                                        |___/ 
+//
+// Helpers
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/animations";
+// Layout
+@import "layout/core";
+@import "layout/grid";
+@import "layout/nav";
+@import "layout/excerpt";
+// Components
+@import "components/books";
+@import "components/buttons";
+@import "components/callout";
+@import "components/quote";
+@import "components/ailments";
+
+.rif-header {
+    background: url(../images/header.jpg) center top no-repeat;
+    background-size: cover;
+    height: 193px;
+}
+
+#target {
+    clear: both;
+    width: 100%;
+    float: left;
+    @extend %size-animation;
+    @media (max-width: $screen-xs-max) {
+        margin-bottom: 100px;
+    }
+    @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+        margin-bottom: 100px;
+    }
+    @media (min-width: $screen-md-min) {
+        margin-bottom: 100px;
+    }
+    @media (min-width: $screen-lg-min) {
+        min-margin-bottom: 100px;
+    }
+}
+
+.target-wrapper {
+    // min-height: 900px;
+    background: url($image-background) center bottom no-repeat;
+    background-size: cover;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    @extend %size-animation;
+    @media (max-width: $screen-xs-max) {
+        height: auto;
+    }
+    @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+        min-height: 900px;
+    }
+    @media (min-width: $screen-md-min) {
+        min-height: 900px;
+    }
+    @media (min-width: $screen-lg-min) {
+        min-height: 900px;
+    }
+}
+
+.ba-header {
+    position: relative;
+    text-align: center;
+    padding: 22px 0;
+    float: left;
+    width: 100%;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.ba-logo {
+    width: 470px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: url($image-logo) no-repeat center center;
+    background-size: 100%;
+    height: 46px;
+}
+
+.ba-sentence {
+    text-align: center;
+    font-weight: normal;
+    margin: 50px 0;
+    color: $ba-blue;
+    h2 {
+        font-weight: 500;
+        margin: 0;
+        display: inline-block;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        @media (max-width: $screen-md-max) {
+            font-size: 24px;
+        }
+        @media (max-width: $screen-xs-max) {
+            font-size: 20px;
+        }
+        
+    }
+    @media (max-width: $screen-xs-max) {
+        margin: 30px 0;
+    }
+}
+
+.list-loading {
+    z-index: 999;
+    position: relative;
+    height: 401px;
+    clear: both;
+    width: 100%;
+    float: left;
+    h1, h2, h3, h4 {
+        color: white;
+    }
+}
+
+.wrap {
+    clear: both;
+}

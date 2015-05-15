@@ -1,0 +1,30 @@
+.quote-wrapper{
+	width: 100%;
+	float: left;
+	clear: both;
+	// background: $ba-purple-light repeat center center;
+	border-top: 2px solid lighten($ba-purple, 15%);
+	border-bottom: 2px solid #ddd;
+
+	min-height: 100px;
+	text-align: center;
+	padding: 40px 0;
+	background: #258dc8; /* Old browsers */
+	background: linear-gradient(to bottom,  lighten($ba-purple, 45%) 0%,lighten($ba-purple, 40%) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 ); /* IE6-9 */
+
+	h2{
+		color: $ba-blue;
+		font-weight: bold;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+	}
+	p{
+		font-size: 17px;
+	}
+	a{
+		color: $ba-red;
+		&:hover{
+			color: darken($ba-red, 15%);
+		}
+	}
+}
